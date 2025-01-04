@@ -1,59 +1,23 @@
-.dashboard-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .header-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .header-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .header-btn.bookings {
-    background-color: #fcb900;
-    color: #fff;
-  }
-  
-  .header-btn.arrivals {
-    background-color: #00bcd4;
-    color: #fff;
-  }
-  
-  .header-btn.occupied {
-    background-color: #ff5722;
-    color: #fff;
-  }
-  
-  .header-btn.departures {
-    background-color: #d500f9;
-    color: #fff;
-  }
-  
-  .header-btn.available-dirty {
-    background-color: #4caf50;
-    color: #fff;
-  }
-  
-  .header-btn.block-rooms {
-    background-color: #ffeb3b;
-    color: #333;
-  }
-  
-  .header-btn:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
+.glass {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+ /*  backdrop-filter: blur(10.5px); */
+  -webkit-backdrop-filter: blur(10.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+  transform: scale(1.05);
+}
+
+.glass:active {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.7);
+  transform: scale(0.95);
+}
   

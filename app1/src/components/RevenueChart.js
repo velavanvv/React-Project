@@ -7,7 +7,7 @@ import {
   Legend,
 } from "chart.js";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import './Header.css';
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -37,11 +37,12 @@ const RevenueChart = ({ data }) => {
   };
 
   return (
-    <div className="revenue-chart bg-white p-4 rounded shadow-sm col-md-12">
+    <div className="revenue-chart bg-white p-4 mt-4 rounded glass col-md-12">
       <h2 className="text-center mb-4">Current Revenue</h2>
+      <div className="d-flex justify-content-center col-md-12">
       <div className="d-flex justify-content-center col-md-8">
         <Pie data={chartData} />
-      </div>
+      </div></div>
       <ul className="list-group mt-4">
         <li className="list-group-item d-flex justify-content-between">
           <span>Total Paid Amount:</span> <strong>₹{data.totalPaid}</strong>

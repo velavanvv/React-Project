@@ -3,6 +3,8 @@ import './App.css';
 import { useEffect,useState } from 'react';
 import RevenueChart from './components/RevenueChart';
 import RoomStatusChart from './components/RoomStatusChart';
+import ReservationType from './components/ReservationType';
+import MostRecentBills from './components/MostRecentBills';
 function App() {
   const revenueData = {
     tariff: 27,
@@ -32,15 +34,36 @@ function App() {
 
     fetchRooms();
   }, []);
+  const reservationTypes = [
+    { name: "Direct", count: 31 },
+    { name: "Reservations", count: 12 },
+    { name: "Agent", count: 17 },
+    { name: "Channel Manager", count: 842 },
+    { name: "Company", count: 32 },
+    { name: "Booking Engine", count: 842 },
+  ];
+  const bills = [
+    { billNo: 501, guestName: "Mr. John Smith", reservationNo: 2274, paymode: "Cash", amount: 1800 },
+    { billNo: 302, guestName: "Ms. Scarlet Johanson", reservationNo: 2568, paymode: "Card", amount: 1700 },
+    { billNo: 106, guestName: "Mr. Sylvester Stallone", reservationNo: 2256, paymode: "Cash", amount: 3500 },
+    { billNo: 103, guestName: "Mr. Robert Downey Junior", reservationNo: 2271, paymode: "Card", amount: 3899 },
+  ];
 
   return (
     <div className="App">
       <Header/>
       <div className="row">
-      <div className="col-md-6">
-   <RevenueChart data={revenueData}/></div>
+     
    <div className="col-md-6">
+   <div className="col-md-12">
+   <ReservationType reservationTypes={reservationTypes}/></div>
+   <div className="col-md-12">
+   <MostRecentBills bills={bills}/></div></div>
+   <div className="col-md-6">
+   <RevenueChart data={revenueData}/></div>
+   <div className="col-md-12">
    <RoomStatusChart rooms={rooms}/></div></div>
+  
     </div>
   );
 }
