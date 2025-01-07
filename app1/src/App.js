@@ -1,11 +1,21 @@
 import Header from './components/Header';
 import './App.css';
-
+import { useEffect } from 'react';
 import RevenueChart from './components/RevenueChart';
 import RoomStatusChartWithSwitcher from "./components/RoomStatusChartWithSwitcher";
 import ReservationType from './components/ReservationType';
 import MostRecentBills from './components/MostRecentBills';
-function App() {
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
+
+const App = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true, // Whether animation should happen only once on scroll
+    });
+  }, []);
+
   const revenueData = {
     tariff: 27,
     exbed: 18,
@@ -38,17 +48,21 @@ function App() {
     <div className="App">
       <Header/>
       <div className="row">
-     
-   <div className="col-md-6">
-   <div className="col-md-12">
-   <ReservationType reservationTypes={reservationTypes}/></div>
-   <div className="col-md-12">
-   <MostRecentBills bills={bills}/></div></div>
-   <div className="col-md-6">
-   <RevenueChart data={revenueData}/></div>
-   <div className="col-md-12">
-   <RoomStatusChartWithSwitcher /></div></div>
-  
+      <div className="col-md-6" data-aos="fade-up">
+  <div className="col-md-12" data-aos="fade-right">
+    <ReservationType reservationTypes={reservationTypes} />
+  </div>
+  <div className="col-md-12" data-aos="fade-left">
+    <MostRecentBills bills={bills} />
+  </div>
+</div>
+<div className="col-md-6" data-aos="fade-up">
+  <RevenueChart data={revenueData} />
+</div>
+<div className="col-md-12" data-aos="zoom-in">
+          <RoomStatusChartWithSwitcher />
+        </div>
+      </div>
     </div>
   );
 }
