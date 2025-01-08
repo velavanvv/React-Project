@@ -7,6 +7,9 @@ import ReservationType from './components/ReservationType';
 import MostRecentBills from './components/MostRecentBills';
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+import RoomStatusChart from './components/RoomStatusChart';
+
+
 
 const App = () => {
   useEffect(() => {
@@ -43,6 +46,26 @@ const App = () => {
     { billNo: 106, guestName: "Mr. Sylvester Stallone", reservationNo: 2256, paymode: "Cash", amount: 3500 },
     { billNo: 103, guestName: "Mr. Robert Downey Junior", reservationNo: 2271, paymode: "Card", amount: 3899 },
   ];
+  const rooms = [
+    { number: "101", type: "Deluxe Suite", status: "occupied" },
+    { number: "102", type: "Single Room", status: "available" },
+    { number: "103", type: "Double Room", status: "cleaning" },
+    { number: "104", type: "Family Suite", status: "occupied" },
+    { number: "6", type: "Family Suite", status: "occupied" },
+    { number: "7", type: "Family Suite", status: "cleaning" },
+    { number: "8", type: "Family Suite", status: "occupied" },
+    { number: "95", type: "Family Suite", status: "cleaning" },
+    { number: "23", type: "Family Suite", status: "occupied" },
+    { number: "643", type: "Family Suite", status: "available" },
+    { number: "623", type: "Family Suite", status: "cleaning" },
+    { number: "6234", type: "Family Suite", status: "occupied" },
+    { number: "343", type: "Family Suite", status: "available" },
+    { number: "545", type: "Family Suite", status: "cleaning" },
+    { number: "453", type: "Family Suite", status: "occupied" },
+    { number: "5443", type: "Family Suite", status: "cleaning" },
+    { number: "546", type: "Family Suite", status: "available" },
+    { number: "43436", type: "Family Suite", status: "available" },
+  ];
 
   return (
     <div className="App">
@@ -62,6 +85,10 @@ const App = () => {
 <div className="col-md-12" data-aos="zoom-in">
           <RoomStatusChartWithSwitcher />
         </div>
+        <div className="col-md-12" data-aos="zoom-in">
+          <RoomStatusChart  rooms={rooms}/>
+        </div>
+     
       </div>
     </div>
   );

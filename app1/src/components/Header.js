@@ -23,7 +23,7 @@ const Header = () => {
   }
   console.log(roomData); // Print the data from setRoomData
   return (
-    <header className="bg-light py-3 border-bottom">
+    <header className="bg-light py-3 border-bottom" data-aos="fade-up">
       <div className="container-fluid">
         <div className="row justify-content-between align-items-center">
           <div className="col-md-2 col-sm-4 col-6 mt-4">

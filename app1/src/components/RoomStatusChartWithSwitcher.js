@@ -33,7 +33,7 @@ const RoomStatusChartWithSwitcher = () => {
         backgroundColor: "#00c76b", // Blue
         borderColor: "#00c76b",
         fill: false,
-        barThickness: 20, // Default bar width
+        barThickness: 25, // Default bar width
       },
       {
         label: "Departure",
@@ -41,7 +41,7 @@ const RoomStatusChartWithSwitcher = () => {
         backgroundColor: "#605ca8", // Purple
         borderColor: "#605ca8",
         fill: false,
-        barThickness: 20, // Default bar width
+        barThickness: 25, // Default bar width
       }
     ],
   };
@@ -70,7 +70,7 @@ const RoomStatusChartWithSwitcher = () => {
         beginAtZero: true,
         title: {
           display: true,
-          text: "Count",
+          text: "Rooms",
         },
       },
     },
